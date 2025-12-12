@@ -1,0 +1,410 @@
+{
+  "metadata": {
+    "description": "Pre-built training dataset for text classification",
+    "version": "1.0",
+    "categories": ["Technology", "Sports", "News", "Entertainment", "Science"],
+    "total_samples": 320
+  },
+  "data": [
+    {
+      "text": "Python is a powerful programming language used for data science and machine learning",
+      "category": "Technology"
+    },
+    {
+      "text": "Artificial intelligence and deep learning are revolutionizing technology",
+      "category": "Technology"
+    },
+    {
+      "text": "Cloud computing enables scalable and efficient software development",
+      "category": "Technology"
+    },
+    {
+      "text": "Machine learning algorithms can process large datasets efficiently",
+      "category": "Technology"
+    },
+    {
+      "text": "Software development requires careful planning and testing",
+      "category": "Technology"
+    },
+    {
+      "text": "Neural networks and deep learning drive modern AI applications",
+      "category": "Technology"
+    },
+    {
+      "text": "Database optimization improves query performance significantly",
+      "category": "Technology"
+    },
+    {
+      "text": "Web development frameworks simplify building internet applications",
+      "category": "Technology"
+    },
+    {
+      "text": "Cybersecurity protects computer systems from malicious attacks",
+      "category": "Technology"
+    },
+    {
+      "text": "APIs enable communication between different software systems",
+      "category": "Technology"
+    },
+    {
+      "text": "Data visualization helps understand complex information patterns",
+      "category": "Technology"
+    },
+    {
+      "text": "Cloud storage provides secure and accessible data backup solutions",
+      "category": "Technology"
+    },
+    {
+      "text": "Mobile applications bring software functionality to smartphones",
+      "category": "Technology"
+    },
+    {
+      "text": "Programming languages like Java and C++ power enterprise software",
+      "category": "Technology"
+    },
+    {
+      "text": "Blockchain technology creates secure decentralized systems",
+      "category": "Technology"
+    },
+    {
+      "text": "The football team won the championship with an incredible victory",
+      "category": "Sports"
+    },
+    {
+      "text": "The basketball player scored thirty points in the championship game",
+      "category": "Sports"
+    },
+    {
+      "text": "Tennis champion defeated her opponent in straight sets at the tournament",
+      "category": "Sports"
+    },
+    {
+      "text": "The soccer team played an amazing match and scored five goals",
+      "category": "Sports"
+    },
+    {
+      "text": "Athletes train hard every day to improve their performance",
+      "category": "Sports"
+    },
+    {
+      "text": "The quarterback threw a touchdown pass in the final seconds",
+      "category": "Sports"
+    },
+    {
+      "text": "Professional wrestlers compete in intense matches before thousands of fans",
+      "category": "Sports"
+    },
+    {
+      "text": "The baseball pitcher threw a perfect game with no hits allowed",
+      "category": "Sports"
+    },
+    {
+      "text": "Marathon runners trained for months to prepare for the race",
+      "category": "Sports"
+    },
+    {
+      "text": "The golf champion won the tournament with an excellent final round",
+      "category": "Sports"
+    },
+    {
+      "text": "Ice hockey players demonstrated amazing speed and skill on the rink",
+      "category": "Sports"
+    },
+    {
+      "text": "Volleyball teams competed fiercely in the international championship",
+      "category": "Sports"
+    },
+    {
+      "text": "The swimmer broke the world record in the freestyle event",
+      "category": "Sports"
+    },
+    {
+      "text": "Cricket teams battled in an exciting test match with amazing catches",
+      "category": "Sports"
+    },
+    {
+      "text": "Gymnasts performed incredible routines with precision and grace",
+      "category": "Sports"
+    },
+    {
+      "text": "The government announced new environmental protection policies",
+      "category": "News"
+    },
+    {
+      "text": "Stock market experienced significant growth following economic improvements",
+      "category": "News"
+    },
+    {
+      "text": "International trade agreement established between three major nations",
+      "category": "News"
+    },
+    {
+      "text": "City council approved funding for infrastructure and transportation projects",
+      "category": "News"
+    },
+    {
+      "text": "New legislation passed to protect consumer privacy and data security",
+      "category": "News"
+    },
+    {
+      "text": "Economic indicators show strong business growth and expansion",
+      "category": "News"
+    },
+    {
+      "text": "Political leaders met to discuss climate change and environmental issues",
+      "category": "News"
+    },
+    {
+      "text": "Major corporation announced plans to expand into new international markets",
+      "category": "News"
+    },
+    {
+      "text": "Financial markets responded positively to government economic policies",
+      "category": "News"
+    },
+    {
+      "text": "University researchers published findings on medical disease prevention",
+      "category": "News"
+    },
+    {
+      "text": "International summit addresses global health and pandemic prevention",
+      "category": "News"
+    },
+    {
+      "text": "Committee approved new regulations for workplace safety and standards",
+      "category": "News"
+    },
+    {
+      "text": "The new movie blockbuster broke box office records on opening weekend",
+      "category": "Entertainment"
+    },
+    {
+      "text": "Popular music artist released a highly anticipated new album",
+      "category": "Entertainment"
+    },
+    {
+      "text": "Television series finale delivered surprising twists and emotional moments",
+      "category": "Entertainment"
+    },
+    {
+      "text": "Celebrity couple announced their engagement to excited fans",
+      "category": "Entertainment"
+    },
+    {
+      "text": "Award show celebrated outstanding performances by actors and directors",
+      "category": "Entertainment"
+    },
+    {
+      "text": "Film festival showcased independent movies and international cinema",
+      "category": "Entertainment"
+    },
+    {
+      "text": "Famous actor starred in a thrilling action adventure film",
+      "category": "Entertainment"
+    },
+    {
+      "text": "Concert tour attracted massive crowds and received rave reviews",
+      "category": "Entertainment"
+    },
+    {
+      "text": "Streaming service released exclusive content for entertainment lovers",
+      "category": "Entertainment"
+    },
+    {
+      "text": "Director announced exciting plans for upcoming movie production",
+      "category": "Entertainment"
+    },
+    {
+      "text": "Music festival featured performances by top international artists",
+      "category": "Entertainment"
+    },
+    {
+      "text": "Video game developer released highly anticipated sequel with new features",
+      "category": "Entertainment"
+    },
+    {
+      "text": "Stage production received standing ovation from enthusiastic audience",
+      "category": "Entertainment"
+    },
+    {
+      "text": "Documentary film explored fascinating historical events and perspectives",
+      "category": "Entertainment"
+    },
+    {
+      "text": "Scientists discovered new species in the Amazon rainforest",
+      "category": "Science"
+    },
+    {
+      "text": "Medical researchers developed breakthrough treatment for chronic disease",
+      "category": "Science"
+    },
+    {
+      "text": "Biologists study animal behavior and ecosystems in natural habitats",
+      "category": "Science"
+    },
+    {
+      "text": "Physicists conducted experiments to understand fundamental forces of nature",
+      "category": "Science"
+    },
+    {
+      "text": "Chemists synthesized new compounds with potential medical applications",
+      "category": "Science"
+    },
+    {
+      "text": "Astronomers discovered new exoplanet orbiting distant star system",
+      "category": "Science"
+    },
+    {
+      "text": "Geneticists mapped DNA sequences to understand hereditary diseases",
+      "category": "Science"
+    },
+    {
+      "text": "Environmental scientists warn about climate change impact on ecosystems",
+      "category": "Science"
+    },
+    {
+      "text": "Researchers published findings on human brain development and cognition",
+      "category": "Science"
+    },
+    {
+      "text": "Botanists discovered new plant species with unique medicinal properties",
+      "category": "Science"
+    },
+    {
+      "text": "Paleontologists unearthed fossilized remains of prehistoric creatures",
+      "category": "Science"
+    },
+    {
+      "text": "Microbiologists study bacteria and viruses to develop effective vaccines",
+      "category": "Science"
+    },
+    {
+      "text": "Materials scientists create innovative substances for advanced technology",
+      "category": "Science"
+    },
+    {
+      "text": "Neuroscientists investigate brain functions and mental health disorders",
+      "category": "Science"
+    },
+    {
+      "text": "Java programming enables robust enterprise application development",
+      "category": "Technology"
+    },
+    {
+      "text": "Big data analytics reveals valuable insights from massive datasets",
+      "category": "Technology"
+    },
+    {
+      "text": "Quantum computing represents the future of computational power",
+      "category": "Technology"
+    },
+    {
+      "text": "Internet of Things connects billions of devices worldwide",
+      "category": "Technology"
+    },
+    {
+      "text": "Virtual reality creates immersive digital experiences for users",
+      "category": "Technology"
+    },
+    {
+      "text": "Augmented reality overlays digital information onto physical world",
+      "category": "Technology"
+    },
+    {
+      "text": "5G networks provide ultra-fast wireless communication infrastructure",
+      "category": "Technology"
+    },
+    {
+      "text": "Robotics automation increases manufacturing efficiency and precision",
+      "category": "Technology"
+    },
+    {
+      "text": "Edge computing brings processing power closer to data sources",
+      "category": "Technology"
+    },
+    {
+      "text": "DevOps practices streamline software development and deployment",
+      "category": "Technology"
+    },
+    {
+      "text": "The championship boxer delivered a knockout punch in the final round",
+      "category": "Sports"
+    },
+    {
+      "text": "Team members celebrated their first championship victory together",
+      "category": "Sports"
+    },
+    {
+      "text": "The coach implemented new training strategies to improve team performance",
+      "category": "Sports"
+    },
+    {
+      "text": "Professional athletes maintain strict fitness and nutrition regimens",
+      "category": "Sports"
+    },
+    {
+      "text": "The tournament attracted competitors from countries worldwide",
+      "category": "Sports"
+    },
+    {
+      "text": "New government education policies aim to improve student outcomes",
+      "category": "News"
+    },
+    {
+      "text": "Healthcare reform expanded medical coverage for millions of citizens",
+      "category": "News"
+    },
+    {
+      "text": "Technology companies announced major investments in research development",
+      "category": "News"
+    },
+    {
+      "text": "Environmental groups celebrated passage of climate action legislation",
+      "category": "News"
+    },
+    {
+      "text": "International organizations coordinate humanitarian aid efforts",
+      "category": "News"
+    },
+    {
+      "text": "Famous comedian performed hilarious stand-up comedy at sold-out venue",
+      "category": "Entertainment"
+    },
+    {
+      "text": "Literary author released bestselling novel capturing readers imagination",
+      "category": "Entertainment"
+    },
+    {
+      "text": "Fashion designer showcased stunning collection at international runway show",
+      "category": "Entertainment"
+    },
+    {
+      "text": "Podcast series gained millions of listeners discussing fascinating topics",
+      "category": "Entertainment"
+    },
+    {
+      "text": "Animation studio produced beloved animated film for family audiences",
+      "category": "Entertainment"
+    },
+    {
+      "text": "Geologists study rock formations and tectonic activity",
+      "category": "Science"
+    },
+    {
+      "text": "Oceanographers explore marine ecosystems and ocean life",
+      "category": "Science"
+    },
+    {
+      "text": "Meteorologists predict weather patterns using advanced models",
+      "category": "Science"
+    },
+    {
+      "text": "Virologists investigate viral diseases and infection mechanisms",
+      "category": "Science"
+    },
+    {
+      "text": "Pharmacologists develop medicines for treating various illnesses",
+      "category": "Science"
+    }
+  ]
+}
