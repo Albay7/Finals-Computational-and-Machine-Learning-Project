@@ -5,9 +5,11 @@ import sys
 # Add project root to path
 sys.path.insert(0, str(Path(__file__).parent))
 
+from typing import Dict
 from core.text_processor import TextProcessor
 from core.frequency_counter import FrequencyCounter
 from ml_models.naive_bayes import NaiveBayesTextClassifier
+from collections import Counter
 try:
     from ml_models.sklearn_models import RandomForestText, AVAILABLE as SKLEARN_AVAILABLE
 except ImportError:
@@ -41,9 +43,28 @@ def load_models_and_data():
     """Load datasets and pre-train baseline and main models on app startup"""
     dataset_loader = DatasetLoader()
 
+    # Prepare combined documents (tokens, label)
+    documents = dataset_loader.get_all_documents_combined()
+
+    # Build category frequency profiles for explainability
+    category_profiles: Dict[str, Dict] = {}
+    overall_counter = Counter()
+    for tokens, label in documents:
+        cat_counter = category_profiles.setdefault(label, Counter())
+        cat_counter.update(tokens)
+        overall_counter.update(tokens)
+
+    category_profiles = {
+        label: {
+            "counter": counter,
+            "total": sum(counter.values())
+        }
+        for label, counter in category_profiles.items()
+    }
+    overall_profile = {"counter": overall_counter, "total": sum(overall_counter.values())}
+
     # Train Naive Bayes on ALL datasets combined
     nb_classifier = NaiveBayesTextClassifier()
-    documents = dataset_loader.get_all_documents_combined()
     if documents:
         nb_classifier.train(documents)
         print(f"Trained Naive Bayes on {len(documents)} documents from all datasets")
@@ -61,10 +82,10 @@ def load_models_and_data():
             print(f"Random Forest training failed: {e}")
             rf_classifier = None
 
-    return dataset_loader, nb_classifier, rf_classifier
+    return dataset_loader, nb_classifier, rf_classifier, category_profiles, overall_profile
 
 # Load models on startup
-dataset_loader, pre_trained_nb, pre_trained_rf = load_models_and_data()
+dataset_loader, pre_trained_nb, pre_trained_rf, category_profiles, overall_profile = load_models_and_data()
 
 def main():
     st.markdown('<h1 class="main-header">Final Project for Computational Science and Machine Learning</h1>', unsafe_allow_html=True)
@@ -355,9 +376,12 @@ def page_text_classification():
         if not test_text.strip():
             st.warning("Please enter some text!")
         else:
+            from collections import Counter  # ensure availability in this scope
+            # Preprocess once for explanations
+            tokens_processed = processor.preprocess(test_text)
+
             if model_choice.startswith("Naive Bayes"):
-                tokens = processor.preprocess(test_text)
-                predicted_class, scores = pre_trained_nb.predict(tokens)
+                predicted_class, scores = pre_trained_nb.predict(tokens_processed)
             elif pre_trained_rf is not None:
                 predicted_class = pre_trained_rf.predict(test_text)
                 scores = pre_trained_rf.predict_proba(test_text)
@@ -390,6 +414,45 @@ def page_text_classification():
                 ])
                 fig.update_layout(height=300, showlegend=False)
                 st.plotly_chart(fig, use_container_width=True)
+
+            # Explainability section
+            st.subheader("Why this prediction?")
+
+            cat_profile = category_profiles.get(predicted_class)
+            if cat_profile:
+                cat_counter = cat_profile["counter"]
+                cat_total = cat_profile["total"] or 1
+                overall_counter = overall_profile["counter"]
+                overall_total = overall_profile["total"] or 1
+
+                input_counter = Counter(tokens_processed)
+
+                evidence = []
+                for word, count in input_counter.most_common(20):
+                    cat_freq = cat_counter.get(word, 0)
+                    other_freq = overall_counter.get(word, 0) - cat_freq
+                    other_total = max(overall_total - cat_total, 1)
+
+                    cat_rel = cat_freq / cat_total
+                    other_rel = other_freq / other_total
+                    lift = (cat_rel + 1e-9) / (other_rel + 1e-9)
+
+                    evidence.append({
+                        "Word": word,
+                        "Count in text": count,
+                        f"Freq in {predicted_class}%": round(cat_rel * 100, 3),
+                        "Freq in others%": round(other_rel * 100, 3),
+                        "Lift": round(lift, 2)
+                    })
+
+                # Sort by lift then by count
+                evidence = sorted(evidence, key=lambda x: (x["Lift"], x["Count in text"]), reverse=True)
+                top_evidence = evidence[:8]
+
+                st.write("These words are much more common in the predicted category than in others (high lift):")
+                st.dataframe(top_evidence, use_container_width=True, hide_index=True)
+            else:
+                st.write("No category profile available to explain this prediction.")
 
     st.divider()
     st.subheader("📑 Evaluate Model Performance")
