@@ -1,0 +1,87 @@
+{
+  "time_complexity": [
+    {
+      "input_size": 100,
+      "count_time_ms": 0.8374000026378781,
+      "sort_time_ms": 0.2869999880203977,
+      "total_time_ms": 1.1243999906582758,
+      "words_per_second": 88936.32233263839
+    },
+    {
+      "input_size": 500,
+      "count_time_ms": 0.9253000025637448,
+      "sort_time_ms": 0.5825999978696927,
+      "total_time_ms": 1.5079000004334375,
+      "words_per_second": 331586.9751682988
+    },
+    {
+      "input_size": 1000,
+      "count_time_ms": 1.4996000099927187,
+      "sort_time_ms": 1.1672000109683722,
+      "total_time_ms": 2.666800020961091,
+      "words_per_second": 374981.2479900945
+    },
+    {
+      "input_size": 5000,
+      "count_time_ms": 10.911000004853122,
+      "sort_time_ms": 2.866599999833852,
+      "total_time_ms": 13.777600004686974,
+      "words_per_second": 362907.9083656849
+    },
+    {
+      "input_size": 10000,
+      "count_time_ms": 17.942099992069416,
+      "sort_time_ms": 2.9529000021284446,
+      "total_time_ms": 20.89499999419786,
+      "words_per_second": 478583.3932891509
+    }
+  ],
+  "space_complexity": {
+    "total_words": 2414,
+    "unique_words": 1493,
+    "hash_map_overhead_bytes": 48,
+    "keys_total_bytes": 71279,
+    "values_total_bytes": 41804,
+    "total_bytes": 113131,
+    "total_kb": 110.4794921875,
+    "total_mb": 0.10789012908935547,
+    "bytes_per_unique_word": 75.77427997320831,
+    "compression_ratio": 0.6184755592377796
+  },
+  "algorithm_comparison": {
+    "unique_words": 1493,
+    "insertion_ms": 18.7659,
+    "selection_ms": 42.2775,
+    "heapsort_ms": 3.478,
+    "mergesort_ms": 2.7671,
+    "quicksort_ms": 1.4408,
+    "insertion_ms_vs_quicksort": 0.077,
+    "selection_ms_vs_quicksort": 0.034,
+    "heapsort_ms_vs_quicksort": 0.414,
+    "mergesort_ms_vs_quicksort": 0.521,
+    "quicksort_ms_vs_quicksort": 1.0,
+    "fastest": "quicksort_ms",
+    "top20_consistency": false
+  },
+  "statistical_validation": {
+    "calculated_mean": 1.6168787675820495,
+    "reference_mean": 1.6168787675820495,
+    "mean_error": 0.0,
+    "calculated_median": 1,
+    "reference_median": 1,
+    "median_error": 0,
+    "calculated_std": 1.7412790363857698,
+    "reference_std": 1.741279036385769,
+    "std_error": 6.661338147750939e-16,
+    "all_accurate": true
+  },
+  "zipf_analysis": {
+    "data_points": 100,
+    "correlation_coefficient": -0.9698480734371351,
+    "r_squared": 0.9406052855497226,
+    "mean_absolute_percentage_error": 76.2845060871811,
+    "chi_square_statistic": 1711.045100705585,
+    "fits_zipf_law": true,
+    "interpretation": "Good fit - generally follows Zipf's Law"
+  }
+}

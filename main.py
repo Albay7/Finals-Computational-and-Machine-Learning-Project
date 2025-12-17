@@ -259,14 +259,14 @@ def page_frequency_analysis():
                     xaxis_type="log"
                 )
                 st.plotly_chart(fig, use_container_width=True)
-                
+
                 st.write("**Zipf's Law** states that word frequency follows a power law distribution. "
                          "The dashed line shows the expected distribution if Zipf's Law holds perfectly.")
 
         # Tab 5: Advanced Statistics
         with tab5:
             st.subheader("Comprehensive Statistical Analysis")
-            
+
             # Detailed metrics in columns
             col1, col2, col3 = st.columns(3)
 
@@ -468,7 +468,7 @@ def page_text_classification():
             key="eval_model_choice"
         )
         n_boot = st.slider("Bootstrap samples", 100, 1000, 200, step=50)
-        sample_size = st.slider("Evaluation samples", 1000, 22000, 5000, step=1000, 
+        sample_size = st.slider("Evaluation samples", 1000, 22000, 5000, step=1000,
                                 help="Use fewer samples for faster evaluation")
 
     with col_eval2:
@@ -477,12 +477,12 @@ def page_text_classification():
     if st.button("📊 Run Evaluation", use_container_width=True):
         # Prepare combined dataset
         docs = dataset_loader.get_all_documents_combined()
-        
+
         # Sample subset for faster evaluation
         import random
         if len(docs) > sample_size:
             docs = random.sample(docs, sample_size)
-        
+
         texts = [" ".join(tokens) for tokens, label in docs]
         labels = [label for tokens, label in docs]
 
@@ -491,11 +491,11 @@ def page_text_classification():
             return
 
         st.info(f"Running evaluation on {len(texts):,} samples...")
-        
+
         # Create progress bar
         progress_bar = st.progress(0)
         status_text = st.empty()
-        
+
         # Step 1: Compute predictions once (20% of progress)
         status_text.text("Step 1/2: Computing predictions...")
         if eval_model_choice.startswith("Naive Bayes"):
@@ -515,7 +515,7 @@ def page_text_classification():
         else:
             st.warning("Random Forest unavailable. Install scikit-learn and restart.")
             return
-        
+
         progress_bar.progress(0.2)
         status_text.text("Step 2/2: Computing bootstrap confidence intervals...")
 
@@ -565,14 +565,14 @@ def page_text_classification():
             metrics_boot["precision"].append(p)
             metrics_boot["recall"].append(r)
             metrics_boot["f1"].append(f)
-            
+
             # Update progress bar (remaining 80%)
             if boot_i % 10 == 0:
                 progress_bar.progress(0.2 + (boot_i / n_boot * 0.8))
-        
+
         progress_bar.progress(1.0)
         status_text.text("✅ Evaluation complete!")
-        
+
         # Clear progress indicators after a moment
         import time
         time.sleep(0.5)

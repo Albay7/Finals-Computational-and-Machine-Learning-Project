@@ -457,9 +457,10 @@ The first run takes 30-60 seconds to train models on all datasets. Subsequent ru
    - **Random Forest** (TF-IDF + sklearn)
 2. Enter text to classify
 3. View prediction with confidence scores
-4. Compare models with evaluation metrics:
-   - Accuracy, Precision, Recall, F1
-   - Bootstrap 95% confidence intervals
+4. Expand **Why this prediction?** to see top words that drove the decision (lift vs. other categories)
+5. Compare models with evaluation metrics:
+  - Accuracy, Precision, Recall, F1
+  - Bootstrap 95% confidence intervals
 
 **Use Cases:**
 - Categorize news articles
@@ -523,6 +524,7 @@ word_frequency_counter/
 **Page 2: Text Classification**
 - **Purpose:** Machine learning model comparison and evaluation
 - **Features:** Model selection, prediction with confidence scores, evaluation metrics with bootstrap CIs
+- **Explainability:** "Why this prediction?" shows top words with highest lift for the predicted class vs. others
 - **Models:** Naive Bayes (manual) + Random Forest (TF-IDF + scikit-learn)
 - **Key Function:** `page_text_classification()` - Pre-trained on 22k+ documents, instant classification
 
@@ -641,6 +643,7 @@ word_frequency_counter/
 ✅ **Ensemble Methods:** Random Forest decision tree voting
 ✅ **Model Evaluation:** Accuracy, precision, recall, F1 scores
 ✅ **Confidence Intervals:** Bootstrap resampling for uncertainty quantification
+✅ **Explainability:** Category-specific word frequency lift to justify predictions
 
 ### Learning Outcomes
 Students/users will understand:
