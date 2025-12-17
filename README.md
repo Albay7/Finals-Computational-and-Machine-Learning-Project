@@ -1,4 +1,4 @@
-# Computational Text Analysis & Machine Learning Platform
+# Computational Science and Machine Learning Finals Projects
 
 A comprehensive text analysis system combining **Computational Science** (manual algorithm implementations for frequency analysis) and **Machine Learning** (classification models for text categorization). The system uses manual implementations of core algorithms alongside industry-standard ML models, with a Streamlit-based web interface.
 
@@ -21,7 +21,7 @@ This platform is divided into two major components:
 ### 1️⃣ **Frequency Analysis** (Computational Science)
 Manual implementations of text processing and statistical algorithms without external computation libraries. Demonstrates fundamental CS concepts:
 - Hash map-based frequency counting (O(n) time complexity)
-- Bubble sort algorithm for ranking
+- Quick Sort algorithm for ranking
 - Statistical calculations (mean, median, standard deviation)
 - Zipf's Law analysis
 - Lexical diversity metrics
