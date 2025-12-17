@@ -88,12 +88,12 @@ Algorithm: count_frequencies(tokens)
 ```python
 Algorithm: quicksort_frequencies(items)
   Base case: if len(items) <= 1, return items
-  
+
   Choose pivot = middle element
   Partition by frequency (descending):
     - Move higher frequencies to left
     - Ties broken alphabetically
-  
+
   Recursively sort left and right partitions
   Return sorted array
 ```
