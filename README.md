@@ -1,4 +1,4 @@
-# Computational Text Analysis & Machine Learning Platform
+# Computational Science and Machine Learning Finals Projects
 
 A comprehensive text analysis system combining **Computational Science** (manual algorithm implementations for frequency analysis) and **Machine Learning** (classification models for text categorization). The system uses manual implementations of core algorithms alongside industry-standard ML models, with a Streamlit-based web interface.
 
